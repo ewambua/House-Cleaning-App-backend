@@ -1,9 +1,9 @@
 class CreateRequests < ActiveRecord::Migration[6.1]
   def change
     create_table :requests do |t|
-      t.response :boolean
-      t.user :id
-      t.cleaner :id
+      t.integer :status, default: 0
+      t.references :user, foreign_key: true
+      t.references :cleaner, foreign_key: true
 
       t.timestamps
     end

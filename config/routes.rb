@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :users
+  resources :cleaners
+  post '/login', to: 'authentication#login'
+  post 'cleaner/login', to: 'authentication#cleaner_login'
+  get '/*a', to: 'application#not_found'
 end
