@@ -7,8 +7,6 @@ class CreatePlans < ActiveRecord::Migration[6.1]
       t.string  :task_two
       t.string :task_three
       t.text :description
-      t.references :user, foreign_key: true
-      t.references :cleaner, foreign_key: true
 
       t.timestamps
     end

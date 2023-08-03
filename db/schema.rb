@@ -29,12 +29,8 @@ ActiveRecord::Schema.define(version: 2023_08_03_132228) do
     t.string "task_two"
     t.string "task_three"
     t.text "description"
-    t.integer "user_id"
-    t.integer "cleaner_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["cleaner_id"], name: "index_plans_on_cleaner_id"
-    t.index ["user_id"], name: "index_plans_on_user_id"
   end
 
   create_table "requests", force: :cascade do |t|
@@ -66,8 +62,6 @@ ActiveRecord::Schema.define(version: 2023_08_03_132228) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "plans", "cleaners"
-  add_foreign_key "plans", "users"
   add_foreign_key "requests", "cleaners"
   add_foreign_key "requests", "users"
   add_foreign_key "reviews", "cleaners"
