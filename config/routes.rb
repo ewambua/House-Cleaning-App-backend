@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :plans
   resources :users
   resources :cleaners
   post '/login', to: 'authentication#login'
