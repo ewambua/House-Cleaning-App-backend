@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :plans
   resources :users
+  resources :requests
   resources :cleaners do
     resources :reviews, only: [:show, :edit, :new]
   end
