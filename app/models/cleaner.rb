@@ -1,9 +1,11 @@
 class Cleaner < ApplicationRecord
-
+   has_secure_password
 
    has_many :requests
-   has_secure_password
    has_many :reviews
+   has_many :plans
+
+
 
 
     validates :name, presence: true

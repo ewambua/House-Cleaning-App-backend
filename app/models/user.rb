@@ -1,6 +1,8 @@
 class User < ApplicationRecord
 
     has_many :requests
+    has_many :reviews
+    has_many :plans
 
     has_secure_password
 
