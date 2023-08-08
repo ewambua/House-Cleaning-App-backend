@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_03_142322) do
+ActiveRecord::Schema.define(version: 2023_08_08_072939) do
 
   create_table "cleaners", force: :cascade do |t|
     t.string "name"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2023_08_03_142322) do
     t.integer "cleaner_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "score"
     t.index ["cleaner_id"], name: "index_reviews_on_cleaner_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end

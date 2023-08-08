@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :plans
   resources :users
   resources :cleaners do
-    resources :reviews, only: [:show, :edit, :new]
+    resources :reviews, only: [:index, :create, :destroy, :update]
   end
   post '/login', to: 'authentication#login'
   post 'cleaner/login', to: 'authentication#cleaner_login'
