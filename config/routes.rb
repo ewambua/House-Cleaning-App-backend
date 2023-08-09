@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     resources :reviews, only: [:show, :create, :destroy, :update]
   end
   
+  namespace :api do
+    post 'submit-request', to: 'requests#create'
+  end
 
 
 end
