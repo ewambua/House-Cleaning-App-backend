@@ -5,8 +5,7 @@ class Cleaner < ApplicationRecord
    attribute :rating, :integer
 
    has_many :requests
-   has_many :reviews
-   has_many :plans
+
 
 
 
