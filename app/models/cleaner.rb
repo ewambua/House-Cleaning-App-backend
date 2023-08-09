@@ -1,5 +1,8 @@
 class Cleaner < ApplicationRecord
    has_secure_password
+   has_many :reviews
+
+   attribute :rating, :integer
 
    has_many :requests
    has_many :reviews
