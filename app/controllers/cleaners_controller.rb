@@ -8,7 +8,7 @@ class CleanersController < ApplicationController
     end
 
     def show
-        render json: @cleaner, include: [:reviews], status: :ok
+        render json: @cleaner, include: [:reviews, :requests], status: :ok
       end
 
     def create
