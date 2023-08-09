@@ -1,5 +1,6 @@
 class CleanersController < ApplicationController
     before_action :find_cleaner, only: [:show, :update]
+    before_action :authorize_cleaner_request, except: [:create, :update, :index]
   
     def index
       @cleaners = Cleaner.all

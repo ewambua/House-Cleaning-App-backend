@@ -1,5 +1,8 @@
 class Plan < ApplicationRecord
 
+    belongs_to :user
+    belongs_to :cleaner
+
 
     validates :name, presence: true, uniqueness: true
     validates :description, presence: true

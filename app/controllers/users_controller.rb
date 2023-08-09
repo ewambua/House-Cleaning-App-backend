@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
     before_action :authorize_request, except: [:create, :show, :update]
     before_action :find_user, only: [:show, :update]
   

@@ -5,10 +5,12 @@ class ReviewsController < ApplicationController
     render json: Review.all
   end
 
+
   def show
     cleaner = Cleaner.find(params[:id])
     render json: cleaner.reviews
   end
+
 
   def create
     @review = Review.create!(review_params)
