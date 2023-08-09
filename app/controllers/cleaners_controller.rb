@@ -1,6 +1,6 @@
 class CleanersController < ApplicationController
     before_action :find_cleaner, only: [:show, :update]
-    before_action :authorize_cleaner_request, except: [:create, :update, :index]
+    before_action :authorize_cleaner_request, except: [:show, :create, :update, :index]
   
     def index
       @cleaners = Cleaner.all
@@ -34,7 +34,8 @@ class CleanersController < ApplicationController
     end
   
     def cleaner_params
-        params.require(:cleaner).permit(:name, :email, :description, :password, :password_confirmation, :image_url)
-      end
+      params.permit(:name, :email, :description, :password, :password_confirmation, :image_url)
+    end
+    
   end
   

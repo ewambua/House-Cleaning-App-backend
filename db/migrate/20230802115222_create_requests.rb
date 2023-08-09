@@ -5,6 +5,8 @@ class CreateRequests < ActiveRecord::Migration[6.1]
       t.references :user, foreign_key: true
       t.references :cleaner, foreign_key: true
 
+      t.json :task_data 
+
       t.timestamps
     end
   end
