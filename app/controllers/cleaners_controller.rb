@@ -1,6 +1,6 @@
 class CleanersController < ApplicationController
 
-    before_action :authorize_request, except: [:create, :update, :index]
+    before_action :authorize_cleaner_request, except: [:create, :update, :index]
 
 
     def index
