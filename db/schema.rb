@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2023_08_08_084433) do
     t.integer "cleaner_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "score"
     t.float "rating"
     t.index ["cleaner_id"], name: "index_reviews_on_cleaner_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
