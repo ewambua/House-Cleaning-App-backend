@@ -103,6 +103,7 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.3-x86_64-linux)
       racc (~> 1.4)
+    pg (1.5.3)
     puma (5.6.6)
       nio4r (~> 2.0)
     racc (1.7.1)
@@ -151,7 +152,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.6.3-x86_64-linux)
     thor (1.2.2)
     timeout (0.4.0)
     tzinfo (2.0.6)
@@ -170,15 +170,15 @@ DEPENDENCIES
   byebug
   jwt
   listen (~> 3.3)
+  pg
   puma (~> 5.0)
   rack-cors
   rails (~> 6.1.7, >= 6.1.7.4)
   spring
-  sqlite3 (~> 1.4)
   tzinfo-data
 
 RUBY VERSION
-   ruby 3.1.2p20
+   ruby 2.7.4p191
 
 BUNDLED WITH
    2.4.7
