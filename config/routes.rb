@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :requests, only: [:index, :create, :show, :update]
+    resources :reviews, only: [:index, :create, :show, :update, :destroy]
+
   end
 
   post 'request', to: 'requests#create'
