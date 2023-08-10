@@ -1,12 +1,11 @@
 databases:
   - name: postgres
     ipAllowList: []
-    databaseName: my_app_render
-    user: my_app_render
+
 
 services:
   - type: web
-    name: my_app_render
+    name: rails
     env: ruby
     buildCommand: "./render-build.sh"
     startCommand: "bundle exec rails s"
@@ -17,3 +16,8 @@ services:
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
+  - type: redis
+    name: redis
+    ipAllowList: []
+    plan: free
+    maxmemoryPolicy: noviction
