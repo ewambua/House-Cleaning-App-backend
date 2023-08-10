@@ -1,12 +1,12 @@
 databases:
   - name: postgres
     ipAllowList: []
-    databaseName: House-Cleaning-App-backend
-    user: House-Cleaning-App-backend
+    databaseName: House_Cleaning_App_backend
+    user: House_Cleaning_App_backend
 
 services:
   - type: web
-    name: House-Cleaning-App-backend
+    name: House_Cleaning_App_backend
     env: ruby
     buildCommand: "./render-build.sh"
     startCommand: "bundle exec rails s"
