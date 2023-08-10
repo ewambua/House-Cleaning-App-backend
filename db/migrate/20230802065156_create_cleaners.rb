@@ -5,7 +5,6 @@ class CreateCleaners < ActiveRecord::Migration[6.1]
       t.string :email
       t.text   :description
       t.string :password_digest
-      cleaners, :image_url, :string
 
       t.timestamps
     end
