@@ -25,7 +25,8 @@ class UsersController < ApplicationController
     end
   
     def show
-        render json: @user.slice(:id, :name, :username, :email, :created_at, :updated_at, :is_admin)
+      render json: @user.slice(:id, :name, :username, :email, :created_at, :updated_at, :is_admin)
+                    .merge(requests: @user.requests) # Include associated requests
     end
   
     private
