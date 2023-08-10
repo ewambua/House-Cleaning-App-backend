@@ -6,15 +6,12 @@ class RequestsController < ApplicationController
     @requests = Request.all
   end
 
-  def show
-  end
-
   def new
     @request = Request.new
   end
 
   def create
-    @request = Request.new(request_params)
+    @request = Request.create!(request_params)
     if @request.save
       render json: { message: 'Request created successfully' }, status: :created
     else
@@ -22,22 +19,20 @@ class RequestsController < ApplicationController
     end
   end
 
-
-
-  def edit
-  end
-
-  def update
+ def update
     if @request.update(request_params)
-      redirect_to @request, notice: 'Request was successfully updated.'
+      render json: { message: 'Request updated successfully' }, status: :ok
     else
-      render :edit
+      render json: { error: 'Error updating request' }, status: :unprocessable_entity
     end
   end
 
+
+
   def destroy
     @request.destroy
-    redirect_to requests_url, notice: 'Request was successfully destroyed.'
+    head :no_content
+    render json: { message: 'Request destroyed successfully' }, status: :ok
   end
 
   private
